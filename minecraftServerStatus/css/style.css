@@ -1,0 +1,61 @@
+@font-face {
+  font-family: "letra";
+  src: url(../fonts/minecraft-4-cdnfonts/MinecraftTen-VGORe.ttf);
+}
+body {
+  background-image: url("../media/556730.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.main {
+  text-align: center;
+}
+
+h1 {
+  font-family: "letra";
+  font-size: 3em;
+}
+
+.newDiv {
+  padding: 10px;
+  width: 20%;
+  background-color: rgba(162, 173, 182, 0.5);
+  text-align: center;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.newDiv img {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+}
+
+.dataHeader {
+  font-weight: bold;
+  color: black;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+input {
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 0;
+  font-size: 16px;
+  font-size: max(16px, 1em);
+  font-family: inherit;
+  padding: 0.25em 0.5em;
+  background-color: #fff;
+  border: 2px solid var(--input-border);
+  border-radius: 4px;
+  border-style: dotted;
+  cursor: grab;
+  color: #777;
+}
