@@ -7,6 +7,7 @@
     margin: 0;
     box-sizing: 0;
 }
+
 //start menu
 .menu {
     display: flex;
@@ -50,3 +51,25 @@
     font-size: 4em;
 }
 //end menu
+
+//start character
+.characterContainer {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(23, 171, 40, 0.5);
+    width: 90%;
+    margin: auto;
+    justify-content: center;
+    
+}
+.cardCharacter {
+    margin: 1%;
+}
+.cardCharacter img{
+    border-radius: 50%;
+}
+.menuButtons {
+    margin-bottom: 5%;
+}
+//end

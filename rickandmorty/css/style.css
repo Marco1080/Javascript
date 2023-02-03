@@ -56,3 +56,25 @@
   font-family: "rick";
   font-size: 4em;
 }
+
+.characterContainer {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgba(23, 171, 40, 0.5);
+  width: 90%;
+  margin: auto;
+  justify-content: center;
+}
+
+.cardCharacter {
+  margin: 1%;
+}
+
+.cardCharacter img {
+  border-radius: 50%;
+}
+
+.menuButtons {
+  margin-bottom: 5%;
+}

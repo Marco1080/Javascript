@@ -20,11 +20,13 @@ async function callGetAllData() {
     myUtilities.buildMenu(container);
 
     const characterButton = document.querySelector('.buttonCharacter').addEventListener('click', ()=> {
-        characterFunction.showCharacters(characterList, currentPage);
+        myUtilities.removeClassSelected('.characterContainer', container);
+        characterFunction.showCharacters(characterList, currentPage, container);
     });
 
     const episodeButton = document.querySelector('.buttonEpisode').addEventListener('click', ()=>{
         console.log(episodeList);
+        myUtilities.removeClassSelected('.characterContainer', container);
     });
 }
 callGetAllData();

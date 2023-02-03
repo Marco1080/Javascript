@@ -1,7 +1,7 @@
 export class data {
     //start get data from characters
     static getNumberCharacterPages() {
-        return fetch('https://rickandmortyapi.com/api/character')
+        return fetch('https://rickandmortyapi.com/api/characte')
             .then((response) => response.json()
             )
             .then((json) => {return json.info.pages})
