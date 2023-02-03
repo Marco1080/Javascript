@@ -5,7 +5,7 @@ import { myUtilities } from "./utilities.js";
 const container = document.querySelector('.container');
 let characterList;
 let episodeList;
-
+let currentPage = 1;
 async function callGetAllData() {
     let image = document.createElement('img');
     image.src = 'media/morty.gif';
@@ -18,5 +18,13 @@ async function callGetAllData() {
     episodeList = data.getDataEpisodes(numberEpisodePages);
     myUtilities.removeClassSelected('.loadingImage', container);
     myUtilities.buildMenu(container);
+
+    const characterButton = document.querySelector('.buttonCharacter').addEventListener('click', ()=> {
+        characterFunction.showCharacters(characterList, currentPage);
+    });
+
+    const episodeButton = document.querySelector('.buttonEpisode').addEventListener('click', ()=>{
+        console.log(episodeList);
+    });
 }
 callGetAllData();

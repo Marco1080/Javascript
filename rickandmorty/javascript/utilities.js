@@ -15,10 +15,12 @@ export class myUtilities {
         let buttonCharacter = document.createElement('button');
         let buttonCharacterText = document.createTextNode('CHARACTERS');
         buttonCharacter.appendChild(buttonCharacterText);
+        buttonCharacter.classList.add('buttonCharacter');
     
         let buttonEpisode = document.createElement('button');
         let buttonEpisodeText = document.createTextNode('EPISODES');
         buttonEpisode.appendChild(buttonEpisodeText);
+        buttonEpisode.classList.add('buttonEpisode');
     
         menu.appendChild(title);
         menu.appendChild(image);
