@@ -65,10 +65,19 @@
   width: 90%;
   margin: auto;
   justify-content: center;
+  margin-top: 5%;
+  margin-bottom: 10%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  border-radius: 18px;
 }
 
 .cardCharacter {
   margin: 1%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: auto;
+  justify-content: center;
 }
 
 .cardCharacter img {
@@ -78,3 +87,34 @@
 .menuButtons {
   margin-bottom: 5%;
 }
+
+.pageDiv {
+  background-color: rgba(68, 199, 103, 0.6);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.pageDiv button {
+  background-color: #44c767;
+  border-radius: 28px;
+  border: 1px solid #18ab29;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 17px;
+  text-shadow: 0px 1px 0px #2f6627;
+  margin: 0 10px;
+  padding: 0 5px;
+}
+
+.pageDiv button:hover {
+  background-color: #5cbf2a;
+}
+
+.pageDiv button:active {
+  position: relative;
+  top: 1px;
+}/*# sourceMappingURL=style.css.map */

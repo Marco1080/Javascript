@@ -20,13 +20,32 @@ async function callGetAllData() {
     myUtilities.buildMenu(container);
 
     const characterButton = document.querySelector('.buttonCharacter').addEventListener('click', ()=> {
-        myUtilities.removeClassSelected('.characterContainer', container);
+        callGeneralRemoves();
+
         characterFunction.showCharacters(characterList, currentPage, container);
+        const selectOption = document.querySelector('.selectOption').addEventListener('change', ()=> {
+            console.log("selected option");
+        });
+        const nextPage = document.querySelector('.buttonNextPage').addEventListener('click', ()=> {
+            console.log(currentPage);
+            currentPage++;
+            myUtilities.removeClassSelected('.characterContainer', container);
+            myUtilities.removeClassSelected('.selectDiv', container);
+            characterFunction.showCharacters(characterList, currentPage, container);
+        });
     });
 
     const episodeButton = document.querySelector('.buttonEpisode').addEventListener('click', ()=>{
         console.log(episodeList);
         myUtilities.removeClassSelected('.characterContainer', container);
     });
+
+
 }
 callGetAllData();
+
+function callGeneralRemoves() {
+    myUtilities.removeClassSelected('.characterContainer', container);
+    myUtilities.removeClassSelected('.selectDiv', container);
+    myUtilities.removeClassSelected('.pageDiv', container);
+}
