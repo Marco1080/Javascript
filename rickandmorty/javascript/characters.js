@@ -1,35 +1,10 @@
-export class characterFunction{
-    static showCharacters(list, currentPage, container) {
+export class character{
+    static showCharacters(list, currentPage) {
+        let container = document.querySelector('.container');
+
         let characterContainer = document.createElement('div');
         characterContainer.classList.add('characterContainer');
 
-        let select = document.createElement('select');
-        select.classList.add('selectOption');
-
-        let optionShowOrderedById = document.createElement('option');
-        optionShowOrderedById.value = 'orderedById';
-
-        let optionShowAliveCharacter = document.createElement('option');
-        optionShowAliveCharacter.value = 'alive';
-
-        let optionShowNotAliveCharacter = document.createElement('option');
-        optionShowNotAliveCharacter.value = 'notAlive';
-        
-        let optionShowOrderedByIdText = document.createTextNode('ORDERED BY ID');
-        let optionShowAliveCharacterText = document.createTextNode('ALIVE');
-        let optionShowNotAliveCharacterText = document.createTextNode('NOT ALIVE');
-
-        optionShowOrderedById.appendChild(optionShowOrderedByIdText);
-        optionShowAliveCharacter.appendChild(optionShowAliveCharacterText);
-        optionShowNotAliveCharacter.appendChild(optionShowNotAliveCharacterText);
-
-        select.appendChild(optionShowOrderedById);
-        select.appendChild(optionShowAliveCharacter);
-        select.appendChild(optionShowNotAliveCharacter);
-
-        let selectDiv = document.createElement('div');
-        selectDiv.classList.add('selectDiv');
-        selectDiv.appendChild(select);
 
         list[currentPage].results.forEach(element => {
 
@@ -68,9 +43,34 @@ export class characterFunction{
 
         buttonNextPage.appendChild(buttonNextPageText);
         pageDiv.appendChild(buttonNextPage);
-
-        container.appendChild(selectDiv);
         container.appendChild(characterContainer);
         container.appendChild(pageDiv);
+    }
+    static showAliveCharacter(list) {
+        list.forEach(element => {
+            element.results.forEach(character => {
+                if(character.status == 'Alive'){
+                    console.log(character.status, character.name);
+                }
+            });
+        });
+    }
+    static showDeadCharacter(list) {
+        list.forEach(element => {
+            element.results.forEach(character => {
+                if(character.status == 'Dead'){
+                    console.log(character.status, character.name);
+                }
+            });
+        });
+    }
+    static showUnkownCharacter(list) {
+        list.forEach(element => {
+            element.results.forEach(character => {
+                if(character.status == 'unknown'){
+                    console.log(character.name);
+                }
+            });
+        });
     }
 }

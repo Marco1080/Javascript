@@ -1,5 +1,6 @@
 export class myUtilities {
-    static buildMenu(container) {
+    static buildMenu() {
+        const container = document.querySelector('.container');
         let menu = document.createElement('div');
         menu.classList.add('menu');
         let title = document.createElement('h1');
@@ -30,7 +31,6 @@ export class myUtilities {
     
         container.appendChild(menu);
     }
-
     static removeClassSelected(className, container) {
         let removeArray = document.querySelectorAll(`${className}`);
         if(removeArray.length > 0) {

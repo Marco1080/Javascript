@@ -1,51 +1,29 @@
 import {data} from "./getData.js";
-import {characterFunction} from "./characters.js";
+import {character} from "./characters.js";
 import { myUtilities } from "./utilities.js";
+import { episodes } from "./episodes.js";
 
 const container = document.querySelector('.container');
 let characterList;
-let episodeList;
+let episodeList;;
 let currentPage = 1;
 async function callGetAllData() {
     let image = document.createElement('img');
     image.src = 'media/morty.gif';
     image.classList.add("loadingImage");
-
-    container.appendChild(image);
     const numberCharacterPages = await data.getNumberCharacterPages();
     characterList = data.getCharacterData(numberCharacterPages);
     const numberEpisodePages = await data.getNumberEpisodesPages();
     episodeList = data.getDataEpisodes(numberEpisodePages);
     myUtilities.removeClassSelected('.loadingImage', container);
-    myUtilities.buildMenu(container);
-
-    const characterButton = document.querySelector('.buttonCharacter').addEventListener('click', ()=> {
-        callGeneralRemoves();
-
-        characterFunction.showCharacters(characterList, currentPage, container);
-        const selectOption = document.querySelector('.selectOption').addEventListener('change', ()=> {
-            console.log("selected option");
-        });
-        const nextPage = document.querySelector('.buttonNextPage').addEventListener('click', ()=> {
-            console.log(currentPage);
-            currentPage++;
-            myUtilities.removeClassSelected('.characterContainer', container);
-            myUtilities.removeClassSelected('.selectDiv', container);
-            characterFunction.showCharacters(characterList, currentPage, container);
-        });
-    });
-
-    const episodeButton = document.querySelector('.buttonEpisode').addEventListener('click', ()=>{
-        console.log(episodeList);
+    myUtilities.buildMenu();
+    character.showCharacters(characterList, currentPage);
+    document.querySelector('.buttonNextPage').addEventListener('click', ()=> {
+        currentPage++;
+        console.log(currentPage);
         myUtilities.removeClassSelected('.characterContainer', container);
+        character.showCharacters(characterList, currentPage);
     });
-
-
+    
 }
 callGetAllData();
-
-function callGeneralRemoves() {
-    myUtilities.removeClassSelected('.characterContainer', container);
-    myUtilities.removeClassSelected('.selectDiv', container);
-    myUtilities.removeClassSelected('.pageDiv', container);
-}

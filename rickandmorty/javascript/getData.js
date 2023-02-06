@@ -40,7 +40,7 @@ export class data {
             .then((response) => response.json()
             )
             .then(data=>{
-                episodeList.push(data)
+                episodeList.push(data);
             })
             .catch((err) => reject(err));
         }
