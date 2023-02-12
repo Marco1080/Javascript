@@ -36,3 +36,21 @@ nav > button:focus {
     background-color: white;
     color: black;
 }
+
+//start card
+.card {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid white;
+    width: 20%;
+    height: 600px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+//end card
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
